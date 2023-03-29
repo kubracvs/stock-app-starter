@@ -12,6 +12,7 @@ import { Formik, Form } from "formik";
 import TextField from "@mui/material/TextField";
 import {object,string,number,date,InferType} from "yup";
 import LoadingButton from '@mui/lab/LoadingButton';
+import { login } from "../apiCall/authCall";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -71,6 +72,7 @@ const Login = () => {
             initialValues={{ email: "", password: "" }}
             validationSchema={LoginScheme}
             onSubmit={(values, actions) => {
+              login();
               actions.resetForm();
               actions.setSubmitting(false);
             }}
