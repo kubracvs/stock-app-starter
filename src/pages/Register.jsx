@@ -93,7 +93,8 @@ const Register = () => {
           }}
           >
           { ({values,handleChange,handleBlur,errors,touched})=>{
-            return(<Form>
+            return(
+            <Form>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
                    <TextField
                      label="User Name"
