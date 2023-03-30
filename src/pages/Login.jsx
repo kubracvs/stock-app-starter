@@ -6,17 +6,19 @@ import Typography from "@mui/material/Typography";
 import LockIcon from "@mui/icons-material/Lock";
 import image from "../assets/result.svg";
 import { Link, useNavigate } from "react-router-dom";
-
 import { useSelector } from "react-redux";
 import { Formik, Form } from "formik";
 import TextField from "@mui/material/TextField";
 import {object,string,number,date,InferType} from "yup";
 import LoadingButton from '@mui/lab/LoadingButton';
-import { login } from "../apiCall/authCall";
+import { login } from "../Hooks/useAuthCall";
+import useAuthCall from "../Hooks/useAuthCall";
 
 const Login = () => {
   const navigate = useNavigate();
   const { currentUser, error,loading } = useSelector((state) => state?.auth);
+
+  const {login} = useAuthCall()
 
 
   const LoginScheme =object({
@@ -72,7 +74,7 @@ const Login = () => {
             initialValues={{ email: "", password: "" }}
             validationSchema={LoginScheme}
             onSubmit={(values, actions) => {
-              login();
+              login(values);
               actions.resetForm();
               actions.setSubmitting(false);
             }}
