@@ -1,8 +1,10 @@
-import { Button } from "@mui/material"
+import { Button, Grid } from "@mui/material"
 import Typography from "@mui/material/Typography"
 import { useEffect } from "react"
 
 import useStockCall from "../Hooks/useStockCall"
+import { useSelector } from "react-redux"
+import FirmCard from "../components/FirmCard"
 
 // import axios from "axios"
 // import { useDispatch, useSelector } from "react-redux"
@@ -28,6 +30,7 @@ const Firms = () => {
   // }
 
 const {getStockData} = useStockCall()
+const {firms} = useSelector((state)=> state.stock)
 
 
 
@@ -45,12 +48,18 @@ const {getStockData} = useStockCall()
         Firm
       </Typography>
 
-      <Button
-        variant="contained"
-       
-      >
+      <Button variant="contained">
         New Firm
       </Button>
+      <Grid container>
+{firms?.map((firm)=>(
+  <Grid item key={firm.id}>
+    
+    <FirmCard firm={firm}/>
+
+  </Grid>
+))}
+      </Grid>
 
   
    
