@@ -1,11 +1,11 @@
-mport * as React from "react"
+import * as React from "react"
 import Card from "@mui/material/Card"
 import CardActions from "@mui/material/CardActions"
 import CardMedia from "@mui/material/CardMedia"
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline"
 import EditIcon from "@mui/icons-material/Edit"
 import { CardHeader } from "@mui/material"
-import useStockCall from "../hooks/useStockCall"
+import useStockCall from "../Hooks/useStockCall"
 import { btnStyle, flex } from "../styles/globalStyle"
 
 const BrandCard = ({ brand, setOpen, setInfo }) => {

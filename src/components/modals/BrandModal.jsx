@@ -4,7 +4,7 @@ import Box from "@mui/material/Box"
 import Button from "@mui/material/Button"
 import Modal from "@mui/material/Modal"
 import TextField from "@mui/material/TextField"
-import useStockCall from "../../hooks/useStockCall"
+import useStockCall from "../../Hooks/useStockCall"
 
 export default function BrandModal({ open, setOpen, info, setInfo }) {
   const { postStockData, putStockData } = useStockCall()
