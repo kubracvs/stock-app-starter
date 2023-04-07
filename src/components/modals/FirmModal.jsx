@@ -36,13 +36,20 @@ export default function FirmModal({open,handleClose,info,setInfo}) {
       handleClose()
       setInfo({name: "", phone:"",address:"",image:""})
   }
+  console.log(info)
+
+  handleClose()
+  setInfo({ name:"", phone:"", address:"",image:""})
 
   return (
     <div>
       
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={()=>{
+          handleClose()
+          setInfo({ name:"", phone:"", address:"",image:""})
+        }}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
