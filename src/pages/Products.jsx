@@ -15,12 +15,12 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Box from '@mui/material/Box';
-import { DataGrid, GridActionsCellItem } from '@mui/x-data-grid';
+import { DataGrid, GridActionsCellItem, GridToolbar } from '@mui/x-data-grid';
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever"
 
 const Products = () => {
  
-  const { getStockData, deleteStockData } = useStockCall();
+  const { getStockData, deleteStockData,getProCatBrand } = useStockCall();
   const { products } = useSelector((state) => state.stock);
   const [open, setOpen] = useState(false);
 
@@ -112,7 +112,10 @@ const Products = () => {
   ];
 
   useEffect(() => {    
-    getStockData("products");
+    // getStockData("products");
+    // getStockData("categories");
+    // getStockData("brands");
+    getProCatBrand()
   }, []);
 
   return (
@@ -132,9 +135,9 @@ const Products = () => {
         setInfo={setInfo}
       />
 
-    <Box sx={{ height: 400, width: '100%' }}>
+    <Box sx={{  width: '100%', marginTop:"1rem" }}>
       <DataGrid
-        rows={rows}
+        rows={products}
         columns={columns}
         initialState={{
           pagination: {
@@ -145,6 +148,7 @@ const Products = () => {
         }}
         pageSizeOptions={[5]}        
         disableRowSelectionOnClick
+        slots={{toolbar: GridToolbar}}
       />
     </Box>
 
