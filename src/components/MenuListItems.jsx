@@ -39,7 +39,7 @@ const icons = [
       title: "Brands",
       icon: <StarsIcon />,
       url: "/stock/brands/",
-    },
+    },  
     {
       title: "Products",
       icon: <InventoryIcon />,

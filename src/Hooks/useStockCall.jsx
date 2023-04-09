@@ -16,7 +16,7 @@ const useStockCall = () => {
   const { axiosWithToken } = useAxios()
 
   const getStockData = async (url) => {
-
+    // const BASE_URL = "https://10001.fullstack.clarusway.com/"
     dispatch(fetchStart())
     try {
       //   const { data } = await axios(`${BASE_URL}stock/${url}/`, {

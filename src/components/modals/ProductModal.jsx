@@ -9,7 +9,6 @@ import { modalStyle } from "../../styles/globalStyle"
 import TextField from "@mui/material/TextField"
 import { Button } from "@mui/material"
 import useStockCall from "../../Hooks/useStockCall"
-
 import { useSelector } from "react-redux"
 
 export default function ProductModal({ open, handleClose, info, setInfo }) {
@@ -108,5 +107,4 @@ export default function ProductModal({ open, handleClose, info, setInfo }) {
         </Box>
       </Modal>
     </div>
-  )
-}
+  )}
