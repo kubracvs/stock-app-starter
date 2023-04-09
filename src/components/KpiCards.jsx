@@ -19,6 +19,7 @@ const KpiCards = () => {
   const totalProfit = totalSales - totalPurchases
   const data = [
     {
+     
       id: 1,
       title: "sales",
       value: `$${totalSales}`,
